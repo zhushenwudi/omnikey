@@ -1,6 +1,7 @@
 1.在主工程的清单文件中添加
 
     <uses-feature android:name="android.hardware.usb.host" />
+    <uses-permission android:name="com.hidglobal.ia.omnikey.service.permission.SMARTCARDIO" />
 
 2.在主工程的 res/xml 目录下新建 device_filter.xml，并填入
 
