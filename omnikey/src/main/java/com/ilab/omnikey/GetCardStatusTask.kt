@@ -9,7 +9,7 @@ import kotlinx.coroutines.*
 
 object GetCardStatusTask {
     private const val WILDCARD_PROTOCOL = "*"
-    private const val READER_NAME = "OMNIKEY 5427 CK"
+    private const val READER_NAME = "OMNIKEY"
     private const val COMMAND_APDU = "ff680d0000"
     private const val CORRECT_APDU_END_RESPONSE = "9000"
     private const val SLEEP_MILLIS = 100L
