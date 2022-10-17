@@ -13,12 +13,11 @@ if (localPropertiesFile.exists()) {
 }
 
 android {
-    compileSdkVersion 31
-    buildToolsVersion "30.0.3"
+    compileSdkVersion 32
 
     defaultConfig {
         minSdkVersion 25
-        targetSdkVersion 31
+        targetSdkVersion 32
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -57,10 +56,10 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
+    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.appcompat:appcompat:1.5.0'
     compileOnly files('libs/JSR268Library.aar')
     implementation "com.jakewharton.timber:timber:4.7.1"
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
 }

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.zhushenwudi.libomnikey.MainAvm" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background">
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="749dp"
+            android:layout_height="402dp"
+            android:background="@drawable/card_binded"
+            android:orientation="vertical"
+            bind:layout_constraintBottom_toTopOf="@+id/btnRead"
+            bind:layout_constraintEnd_toEndOf="parent"
+            bind:layout_constraintHorizontal_bias="0.5"
+            bind:layout_constraintStart_toStartOf="parent"
+            bind:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="75dp"
+                android:layout_marginTop="75dp"
+                android:text="IC卡"
+                android:textColor="@color/white"
+                android:textSize="48sp" />
+
+            <TextView
+                android:id="@+id/tv_card_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="75dp"
+                android:layout_marginTop="10dp"
+                android:text="@{vm.cardNum}"
+                android:textColor="@color/white"
+                android:textSize="26sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnRead"
+            style="@style/commonButtonStyle"
+            android:layout_marginBottom="200dp"
+            android:text="读卡"
+            bind:layout_constraintBottom_toBottomOf="parent"
+            bind:layout_constraintEnd_toEndOf="parent"
+            bind:layout_constraintHorizontal_bias="0.5"
+            bind:layout_constraintStart_toStartOf="parent"
+            bind:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

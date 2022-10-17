@@ -1,0 +1,107 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="628dp"
+    android:layout_height="464dp"
+    android:background="@drawable/dialog_bg_border"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_second"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="39dp"
+        android:text="60s"
+        android:textColor="#fffe3e62"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/btn_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_photo"
+            android:layout_width="160dp"
+            android:layout_height="160dp" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:gravity="center"
+            android:text="title"
+            android:textColor="@color/BayofMany"
+            android:textSize="34sp" />
+
+        <TextView
+            android:id="@+id/tv_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="message"
+            android:layout_marginTop="14dp"
+            android:textColor="@color/BayofMany"
+            android:textSize="24sp" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp"
+            android:paddingTop="9dp"
+            android:paddingBottom="9dp"
+            android:gravity="center"
+            android:visibility="gone"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/current_use_agentia_quality_corner_border">
+
+            <TextView
+                android:id="@+id/tv_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="28sp"
+                android:text="入库数量:55"
+                app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+                app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+                app:layout_constraintStart_toStartOf="@+id/linearLayout"
+                app:layout_constraintTop_toTopOf="@+id/linearLayout" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_back"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="314dp"
+        android:layout_height="88dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_next"
+        android:background="@drawable/dialog_two_button_left_border"
+        android:text="返回首页"
+        android:textColor="@color/CornflowerBlue"
+        android:textSize="32sp" />
+
+    <Button
+        android:id="@+id/btn_next"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="314dp"
+        android:layout_height="88dp"
+        android:layout_marginTop="377dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/dialog_two_button_right_border"
+        android:text="我知道了"
+        android:textColor="@color/white"
+        android:textSize="32sp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

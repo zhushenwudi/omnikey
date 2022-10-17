@@ -17,6 +17,13 @@ object GetCardStatusTask {
     private lateinit var scope: CoroutineScope
     private lateinit var mutableCode: MutableLiveData<Pair<OmniCard.Status, String>>
 
+    private val map = arrayListOf<Triple<Int, Int, Int>>()
+
+    init {
+        map.add(Triple(26, 9, 1))
+        map.add(Triple(35, 14, 1))
+    }
+
     fun execute(
         terminal: CardTerminal,
         mutableCode: MutableLiveData<Pair<OmniCard.Status, String>>
@@ -74,9 +81,12 @@ object GetCardStatusTask {
     private fun parseResp(resp: String) {
         if (resp.endsWith(CORRECT_APDU_END_RESPONSE)) {
             val bin = ConvertUtils.hexStringToAscii(resp.dropLast(4)).toLong(16).toString(2)
-            if (bin.length == 26) {
-                val pacs = ConvertUtils.convertBinaryToDecimal(bin.drop(9).dropLast(1).toLong())
-                mutableCode.postValue(Pair(OmniCard.Status.READ, pacs.toString()))
+            for (i in 0 until map.size) {
+                if (bin.length == map[i].first) {
+                    val pacs = ConvertUtils.convertBinaryToDecimal(bin.drop(map[i].second).dropLast(map[i].third).toLong())
+                    mutableCode.postValue(Pair(OmniCard.Status.READ, pacs.toString()))
+                    continue
+                }
             }
         }
     }
